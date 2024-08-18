@@ -275,6 +275,8 @@ This diagram is crucial for the project's data management strategy, making it ea
 
 ### 📊 Power-Bi Dashboard
 
+<img width="1221" alt="Screenshot 2024-08-17 at 23 53 37" src="https://github.com/user-attachments/assets/c1e3dca8-595f-49c4-a8cf-5615216ebc88">
+
 
 
 
