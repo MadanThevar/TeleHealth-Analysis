@@ -1,5 +1,6 @@
-# 🏥 Tele-Health Data Analytics Project 
-
+<div align="center">
+  <h1> 🏥 Tele-Health Data Analytics Project </h1>
+</div>
 
 ## 🚀 Overview and Purpose
 
