@@ -23,28 +23,35 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 ## 🗄️ SQL Queries Using PostgreSQL
 
-### Basic Beginner Questions
+### Beginner Level
 
 1. **👨‍⚕️ How many telehealth visits were conducted by gender?**
-   - **Main Function Used**: `COUNT(*)`
    ```sql
    SELECT Gender, COUNT(*) AS VisitCount
    FROM TelehealthServicesUsage
    GROUP BY Gender;
 
 2. **🔢 What is the average satisfaction score for each service type?**
-   - **Main Function Used**: `AVG()` and `ROUND()`
    ```sql
    SELECT ServiceType, ROUND(AVG(SatisfactionScore), 2) AS AverageSatisfaction
    FROM TelehealthServicesUsage
    GROUP BY ServiceType;
 
 3. **💸 What is the total healthcare cost for each type of insurance?**
-   - **Main Function Used**: `SUM()` and `TO_CHAR()`
    ```sql
    SELECT InsuranceType, TO_CHAR(SUM(HealthcareCost), 'FM$999,999,999.00') AS TotalCost
    FROM TelehealthServicesUsage
    GROUP BY InsuranceType;
+
+ ### Intermediate Level
+
+ 1. **⏳ What is the average duration of visits for each gender and socioeconomic status (for satisfaction scores > 3)?**
+    ```sql
+    SELECT Gender, SocioeconomicStatus, ROUND(AVG(DurationOfVisit), 2) AS AverageDuration
+    FROM TelehealthServicesUsage
+    WHERE SatisfactionScore > 3
+    GROUP BY Gender, SocioeconomicStatus
+    ORDER BY Gender, SocioeconomicStatus;
    
 
 
