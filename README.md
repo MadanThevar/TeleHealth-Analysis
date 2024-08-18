@@ -23,7 +23,6 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 ## 🗄️ SQL Queries Using PostgreSQL
 
-### Beginner Level
 
 1. **👨‍⚕️ How many telehealth visits were conducted by gender?**
    ```sql
@@ -58,9 +57,8 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 <img width="437" alt="Screenshot 2024-08-17 at 22 25 20" src="https://github.com/user-attachments/assets/e4dd0056-904e-47ea-8b8a-c0dee6d2c97f">
 
 
- ### Intermediate Level
 
- 1. **⏳ What is the average duration of visits for each gender and socioeconomic status (for satisfaction scores > 3)?**
+ 4. **⏳ What is the average duration of visits for each gender and socioeconomic status (for satisfaction scores > 3)?**
     ```sql
     SELECT Gender, SocioeconomicStatus, ROUND(AVG(DurationOfVisit), 2) AS AverageDuration
     FROM TelehealthServicesUsage
@@ -74,7 +72,7 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 
 
-2. **🩺 How many patients had technical issues during their telehealth visits, grouped by primary diagnosis and insurance type?**
+5. **🩺 How many patients had technical issues during their telehealth visits, grouped by primary diagnosis and insurance type?**
    ```sql
    SELECT PrimaryDiagnosis, InsuranceType, COUNT(*) AS NumPatientsWithTechnicalIssues
    FROM TelehealthServicesUsage
@@ -88,7 +86,7 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 
 
-3. **💰 What is the total healthcare cost and the number of follow-up visits for each ethnicity, specifically for patients with 'Medicaid' insurance?**
+6. **💰 What is the total healthcare cost and the number of follow-up visits for each ethnicity, specifically for patients with 'Medicaid' insurance?**
     ```sql
     SELECT Ethnicity, TO_CHAR(SUM(HealthcareCost), 'FM$999,999,999.00') AS TotalHealthcareCost, COUNT(*) AS FollowUpVisits
     FROM TelehealthServicesUsage
@@ -101,7 +99,7 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 <img width="626" alt="Screenshot 2024-08-17 at 22 36 15" src="https://github.com/user-attachments/assets/2d918360-1991-4fde-9330-4e648a69daa0">
 
 
-4. **📊 What is the average satisfaction score and total number of visits for each combination of primary diagnosis and service type?**
+7. **📊 What is the average satisfaction score and total number of visits for each combination of primary diagnosis and service type?**
    ```sql
    SELECT PrimaryDiagnosis, ServiceType,
        ROUND(AVG(SatisfactionScore), 2) AS AverageSatisfactionScore,
@@ -114,7 +112,7 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 <img width="631" alt="Screenshot 2024-08-17 at 22 55 36" src="https://github.com/user-attachments/assets/a10f76dc-2bdc-49a0-b43c-baa027895890">
 
-5. **🔍 For each primary diagnosis, determine the average healthcare cost and satisfaction score for visits that required follow-up compared to those that did not?**
+8. **🔍 For each primary diagnosis, determine the average healthcare cost and satisfaction score for visits that required follow-up compared to those that did not?**
    ```sql
    SELECT PrimaryDiagnosis,
        TO_CHAR(AVG(CASE WHEN FollowUpRequired = 'Yes' THEN CAST(HealthcareCost AS numeric) ELSE NULL END), 'FM$999,999,999.00') AS AvgCostWithFollowUp,
@@ -130,9 +128,8 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 <img width="671" alt="Screenshot 2024-08-17 at 23 02 36" src="https://github.com/user-attachments/assets/9ca4d6db-d1cb-4dec-98b3-eeda5d6afe7b">
 
 
- ### Advanced Level
 
-1. **🏥 Determine the top 3 primary diagnoses based on total healthcare costs, and for each, provide the average satisfaction score and the number of visits?**
+9. **🏥 Determine the top 3 primary diagnoses based on total healthcare costs, and for each, provide the average satisfaction score and the number of visits?**
    ```sql
    WITH DiagnosisStats AS (
     SELECT PrimaryDiagnosis,
@@ -154,62 +151,64 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 <img width="623" alt="Screenshot 2024-08-17 at 23 08 43" src="https://github.com/user-attachments/assets/0dbc1016-cb56-4eb2-9e3c-86f04ac6e480">
 
-2. **💻 Calculate the average healthcare cost and average satisfaction score for each telehealth platform, and identify the telehealth platform with the highest average satisfaction score?**
-   ```sql
-   WITH PlatformStats AS (
-    SELECT TelehealthPlatform,
+   10. **💻 Calculate the average healthcare cost and average satisfaction score for each telehealth platform, and identify the telehealth platform with the highest average satisfaction score?**
+       ```sql
+       WITH PlatformStats AS (
+       SELECT TelehealthPlatform,
            AVG(CAST(HealthcareCost AS numeric)) AS AvgHealthcareCost,
            AVG(SatisfactionScore) AS AvgSatisfactionScore
-    FROM TelehealthServicesUsage
-    GROUP BY TelehealthPlatform
-    )
-    SELECT TelehealthPlatform,
+       FROM TelehealthServicesUsage
+       GROUP BY TelehealthPlatform
+       )
+       SELECT TelehealthPlatform,
        TO_CHAR(AvgHealthcareCost, 'FM$999,999,999.00') AS AvgHealthcareCost,
        ROUND(AvgSatisfactionScore, 2) AS AvgSatisfactionScore
-   FROM PlatformStats
-   ORDER BY AvgSatisfactionScore DESC
-   LIMIT 1;
+       FROM PlatformStats
+       ORDER BY AvgSatisfactionScore DESC
+       LIMIT 1;
+
 
 **Output:**
 
 <img width="622" alt="Screenshot 2024-08-17 at 23 17 35" src="https://github.com/user-attachments/assets/9b47021b-33b1-4998-9a98-1192a25bc02a">
 
 
-3. **🔍 Determine the top 3 primary diagnoses with the highest average healthcare costs for patients aged 60 and above, and calculate the average satisfaction score and the percentage of visits that required follow-up for each diagnosis?**
-   ```sql
-   WITH AgeFilteredData AS (
-    SELECT PrimaryDiagnosis,
+   11. **🔍 Determine the top 3 primary diagnoses with the highest average healthcare costs for patients aged 60 and above, and calculate the average satisfaction score and the percentage of 
+       visits that required follow-up for each diagnosis?**
+       ```sql
+       WITH AgeFilteredData AS (
+       SELECT PrimaryDiagnosis,
            SatisfactionScore,
            CAST(HealthcareCost AS numeric) AS HealthcareCost,
            FollowUpRequired,
            Age,
            PatientID
-    FROM TelehealthServicesUsage
-    WHERE Age >= 60
-    ),
-    DiagnosisStats AS (
-    SELECT PrimaryDiagnosis,
+       FROM TelehealthServicesUsage
+       WHERE Age >= 60
+       ),
+       DiagnosisStats AS (
+       SELECT PrimaryDiagnosis,
            AVG(HealthcareCost) AS AvgHealthcareCost,
            AVG(SatisfactionScore) AS AvgSatisfactionScore,
            SUM(CASE WHEN FollowUpRequired = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS FollowUpVisitPercentage
-    FROM AgeFilteredData
-    GROUP BY PrimaryDiagnosis
-    ),
-    RankedDiagnoses AS (
-    SELECT PrimaryDiagnosis,
+       FROM AgeFilteredData
+       GROUP BY PrimaryDiagnosis
+       ),
+       RankedDiagnoses AS (
+       SELECT PrimaryDiagnosis,
            AvgHealthcareCost,
            AvgSatisfactionScore,
            FollowUpVisitPercentage,
            RANK() OVER (ORDER BY AvgHealthcareCost DESC) AS Rank
-    FROM DiagnosisStats
-    )
-    SELECT PrimaryDiagnosis,
+       FROM DiagnosisStats
+       )
+       SELECT PrimaryDiagnosis,
        TO_CHAR(AvgHealthcareCost, 'FM$999,999,999.00') AS AvgHealthcareCost,
        ROUND(AvgSatisfactionScore, 2) AS AvgSatisfactionScore,
        ROUND(FollowUpVisitPercentage, 2) AS FollowUpVisitPercentage
-     FROM RankedDiagnoses
-     WHERE Rank <= 3
-     ORDER BY AvgHealthcareCost DESC;
+       FROM RankedDiagnoses
+       WHERE Rank <= 3
+       ORDER BY AvgHealthcareCost DESC;
 
 **Output:**
 
