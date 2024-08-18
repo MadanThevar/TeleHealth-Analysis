@@ -1,0 +1,101 @@
+PatientID,Age,Gender,Ethnicity,SocioeconomicStatus,TelehealthVisitDate,ServiceType,DurationOfVisit,SatisfactionScore,TechnicalIssues,FollowUpRequired,HealthcareCost,InsuranceType,PrimaryDiagnosis,TelehealthPlatform
+1,56,Male,Asian,Medium,2023-01-01,Follow-up Visit,42,1,Yes,No,100,Private,Hypertension,Teams
+2,56,Male,Other,Low,2023-01-02,Follow-up Visit,44,4,Yes,Yes,100,Private,Diabetes,Teams
+3,54,Male,Other,Medium,2023-01-03,Chronic Disease Management,53,1,Yes,Yes,180,Medicaid,Asthma,Zoom
+4,19,Female,Hispanic,Low,2023-01-04,Follow-up Visit,15,1,Yes,No,100,Medicaid,Depression,Custom
+5,71,Other,Hispanic,High,2023-01-05,Mental Health,31,1,No,No,200,Medicaid,Anxiety,Custom
+6,77,Female,Hispanic,Low,2023-01-06,Follow-up Visit,34,5,No,No,100,Uninsured,Asthma,Skype
+7,54,Female,Hispanic,Low,2023-01-07,General Consultation,12,4,Yes,Yes,150,Private,Anxiety,Teams
+8,23,Other,White,High,2023-01-08,Mental Health,17,2,No,No,200,Uninsured,Anxiety,Custom
+9,23,Other,Hispanic,Low,2023-01-09,Follow-up Visit,54,3,No,Yes,100,Private,Depression,Custom
+10,56,Other,Asian,High,2023-01-10,Chronic Disease Management,21,5,Yes,No,180,Private,Hypertension,Teams
+11,53,Female,White,High,2023-01-11,Follow-up Visit,38,1,Yes,Yes,100,Medicaid,Diabetes,Custom
+12,42,Male,Asian,High,2023-01-12,General Consultation,41,1,Yes,Yes,150,Medicare,Anxiety,Zoom
+13,67,Female,Hispanic,Low,2023-01-13,General Consultation,11,3,No,Yes,150,Private,Asthma,Custom
+14,33,Female,Other,High,2023-01-14,General Consultation,26,2,Yes,No,150,Medicare,Depression,Custom
+15,38,Other,White,Medium,2023-01-15,General Consultation,28,4,No,No,150,Uninsured,Depression,Teams
+16,68,Female,Other,Low,2023-01-16,Follow-up Visit,24,1,No,No,100,Medicaid,Asthma,Zoom
+17,27,Male,Asian,Low,2023-01-17,General Consultation,31,3,No,No,150,Private,Anxiety,Skype
+18,73,Male,Asian,Medium,2023-01-18,General Consultation,57,1,No,No,150,Medicaid,Anxiety,Teams
+19,22,Female,White,Medium,2023-01-19,Chronic Disease Management,57,3,No,Yes,180,Uninsured,Anxiety,Skype
+20,67,Other,Asian,Medium,2023-01-20,Follow-up Visit,15,2,No,No,100,Medicare,Asthma,Skype
+21,42,Female,White,Medium,2023-01-21,General Consultation,43,3,No,No,150,Medicaid,Anxiety,Zoom
+22,48,Male,Asian,High,2023-01-22,General Consultation,52,1,No,No,150,Medicaid,Asthma,Skype
+23,20,Male,Other,Low,2023-01-23,Chronic Disease Management,12,5,No,Yes,180,Private,Depression,Zoom
+24,37,Female,Black,Low,2023-01-24,General Consultation,37,2,Yes,No,150,Medicare,Asthma,Custom
+25,21,Male,Hispanic,Medium,2023-01-25,General Consultation,50,3,No,No,150,Uninsured,Diabetes,Zoom
+26,31,Female,Hispanic,High,2023-01-26,Chronic Disease Management,29,5,No,No,180,Private,Hypertension,Teams
+27,29,Male,Black,High,2023-01-27,General Consultation,25,4,No,Yes,150,Medicaid,Hypertension,Skype
+28,31,Other,Black,Medium,2023-01-28,General Consultation,17,4,No,No,150,Medicaid,Diabetes,Zoom
+29,54,Male,White,Medium,2023-01-29,Chronic Disease Management,54,3,Yes,No,180,Medicare,Asthma,Teams
+30,35,Female,Asian,Medium,2023-01-30,General Consultation,39,2,Yes,Yes,150,Uninsured,Hypertension,Zoom
+31,44,Female,Other,Medium,2023-01-31,Chronic Disease Management,45,1,Yes,No,180,Uninsured,Diabetes,Skype
+32,24,Other,Hispanic,High,2023-02-01,General Consultation,43,4,Yes,Yes,150,Medicaid,Anxiety,Skype
+33,65,Male,Black,Low,2023-02-02,Follow-up Visit,58,5,No,No,100,Uninsured,Diabetes,Teams
+34,52,Female,Black,High,2023-02-03,Follow-up Visit,59,5,No,No,100,Private,Hypertension,Teams
+35,39,Male,Black,Low,2023-02-04,General Consultation,26,5,No,Yes,150,Medicare,Asthma,Teams
+36,38,Other,Asian,Low,2023-02-05,Follow-up Visit,34,4,Yes,Yes,100,Medicaid,Asthma,Teams
+37,60,Female,Other,Low,2023-02-06,Follow-up Visit,15,3,No,No,100,Uninsured,Asthma,Teams
+38,76,Other,Black,High,2023-02-07,Follow-up Visit,52,4,Yes,No,100,Uninsured,Hypertension,Skype
+39,75,Female,Other,Medium,2023-02-08,Chronic Disease Management,29,2,Yes,No,180,Private,Anxiety,Custom
+40,35,Male,Hispanic,Medium,2023-02-09,Follow-up Visit,27,2,No,No,100,Uninsured,Asthma,Teams
+41,55,Female,White,High,2023-02-10,Mental Health,55,3,Yes,No,200,Private,Depression,Custom
+42,43,Other,White,High,2023-02-11,Chronic Disease Management,42,5,Yes,Yes,180,Medicare,Anxiety,Teams
+43,70,Female,Hispanic,Low,2023-02-12,Mental Health,32,4,No,No,200,Medicaid,Diabetes,Teams
+44,39,Other,White,High,2023-02-13,Follow-up Visit,43,3,No,Yes,100,Private,Depression,Teams
+45,73,Female,Black,Low,2023-02-14,Follow-up Visit,48,1,Yes,No,100,Uninsured,Anxiety,Skype
+46,54,Other,Asian,High,2023-02-15,Mental Health,19,2,Yes,No,200,Uninsured,Hypertension,Custom
+47,22,Male,White,Medium,2023-02-16,General Consultation,15,1,No,No,150,Medicare,Depression,Skype
+48,65,Female,Hispanic,Medium,2023-02-17,Follow-up Visit,22,1,Yes,Yes,100,Private,Anxiety,Zoom
+49,52,Male,Asian,Medium,2023-02-18,Chronic Disease Management,52,4,Yes,No,180,Medicaid,Anxiety,Teams
+50,29,Female,Hispanic,High,2023-02-19,Mental Health,26,3,Yes,No,200,Uninsured,Anxiety,Teams
+51,52,Female,Black,Low,2023-02-20,Mental Health,27,1,No,Yes,200,Private,Anxiety,Custom
+52,51,Male,Hispanic,Medium,2023-02-21,Follow-up Visit,14,1,Yes,Yes,100,Uninsured,Asthma,Skype
+53,64,Other,Black,Low,2023-02-22,Mental Health,35,5,Yes,No,200,Medicaid,Depression,Skype
+54,37,Male,White,Medium,2023-02-23,Mental Health,24,5,Yes,No,200,Private,Anxiety,Skype
+55,66,Male,Asian,Low,2023-02-24,Chronic Disease Management,55,1,No,No,180,Uninsured,Diabetes,Teams
+56,29,Female,Other,High,2023-02-25,General Consultation,27,4,Yes,No,150,Medicaid,Anxiety,Custom
+57,51,Other,Asian,High,2023-02-26,General Consultation,39,1,No,Yes,150,Private,Asthma,Zoom
+58,43,Other,Other,Low,2023-02-27,Mental Health,16,2,Yes,Yes,200,Private,Depression,Zoom
+59,51,Male,White,High,2023-02-28,General Consultation,38,3,No,No,150,Medicare,Depression,Skype
+60,49,Male,Hispanic,Low,2023-03-01,Mental Health,20,4,No,Yes,200,Medicaid,Anxiety,Custom
+61,63,Other,Black,High,2023-03-02,General Consultation,15,5,No,Yes,150,Private,Anxiety,Skype
+62,24,Male,Black,High,2023-03-03,General Consultation,46,3,No,Yes,150,Medicare,Diabetes,Skype
+63,43,Female,Black,Low,2023-03-04,Chronic Disease Management,46,2,Yes,Yes,180,Private,Depression,Skype
+64,42,Female,White,Medium,2023-03-05,Mental Health,30,4,No,Yes,200,Uninsured,Depression,Zoom
+65,63,Male,White,Medium,2023-03-06,Chronic Disease Management,32,4,Yes,No,180,Medicare,Depression,Zoom
+66,56,Female,Other,Medium,2023-03-07,Follow-up Visit,20,4,No,No,100,Private,Hypertension,Skype
+67,69,Other,Asian,Low,2023-03-08,General Consultation,53,5,No,Yes,150,Uninsured,Depression,Custom
+68,34,Male,Asian,Medium,2023-03-09,Follow-up Visit,40,3,Yes,No,100,Uninsured,Depression,Zoom
+69,41,Female,Hispanic,High,2023-03-10,Mental Health,24,2,Yes,Yes,200,Uninsured,Diabetes,Skype
+70,44,Male,Other,Medium,2023-03-11,Mental Health,58,1,Yes,Yes,200,Medicare,Diabetes,Zoom
+71,21,Other,White,High,2023-03-12,Mental Health,11,1,No,Yes,200,Uninsured,Asthma,Teams
+72,44,Female,White,Medium,2023-03-13,Follow-up Visit,50,1,No,Yes,100,Medicaid,Diabetes,Teams
+73,64,Other,Black,Medium,2023-03-14,Follow-up Visit,17,3,Yes,Yes,100,Private,Depression,Zoom
+74,76,Male,Other,Low,2023-03-15,Mental Health,15,4,No,No,200,Medicaid,Depression,Skype
+75,47,Male,Other,High,2023-03-16,Mental Health,25,2,No,No,200,Uninsured,Depression,Zoom
+76,20,Female,White,High,2023-03-17,Follow-up Visit,51,5,Yes,No,100,Uninsured,Diabetes,Custom
+77,23,Other,Other,High,2023-03-18,Mental Health,42,4,Yes,No,200,Medicaid,Anxiety,Skype
+78,75,Male,Black,Medium,2023-03-19,General Consultation,33,5,Yes,No,150,Medicare,Hypertension,Skype
+79,25,Other,Black,Medium,2023-03-20,Mental Health,24,4,Yes,No,200,Uninsured,Asthma,Skype
+80,33,Other,White,Low,2023-03-21,General Consultation,44,1,No,No,150,Uninsured,Anxiety,Skype
+81,32,Female,White,Low,2023-03-22,Chronic Disease Management,39,4,No,Yes,180,Medicaid,Hypertension,Custom
+82,53,Other,Other,Low,2023-03-23,Follow-up Visit,35,1,Yes,No,100,Uninsured,Diabetes,Zoom
+83,70,Male,Other,Medium,2023-03-24,General Consultation,14,1,No,No,150,Uninsured,Asthma,Zoom
+84,57,Male,Asian,Low,2023-03-25,Follow-up Visit,10,2,No,Yes,100,Medicare,Asthma,Teams
+85,72,Female,Other,High,2023-03-26,Follow-up Visit,36,2,No,No,100,Medicare,Diabetes,Skype
+86,25,Other,Other,Low,2023-03-27,Chronic Disease Management,30,5,No,Yes,180,Medicare,Anxiety,Teams
+87,69,Male,Hispanic,Medium,2023-03-28,Mental Health,15,5,No,No,200,Medicare,Hypertension,Custom
+88,56,Male,White,Low,2023-03-29,General Consultation,34,3,No,Yes,150,Medicare,Depression,Zoom
+89,75,Female,Other,High,2023-03-30,General Consultation,27,3,Yes,No,150,Uninsured,Depression,Zoom
+90,69,Other,Hispanic,High,2023-03-31,General Consultation,14,5,No,Yes,150,Private,Hypertension,Skype
+91,47,Other,Other,High,2023-04-01,Chronic Disease Management,42,2,No,No,180,Uninsured,Depression,Zoom
+92,73,Other,White,Medium,2023-04-02,Mental Health,59,1,No,Yes,200,Uninsured,Anxiety,Custom
+93,67,Male,Asian,High,2023-04-03,Follow-up Visit,27,3,Yes,No,100,Private,Diabetes,Custom
+94,29,Male,Black,Low,2023-04-04,Follow-up Visit,18,2,No,No,100,Medicaid,Depression,Skype
+95,21,Female,White,Low,2023-04-05,General Consultation,19,1,No,Yes,150,Private,Diabetes,Teams
+96,31,Male,White,High,2023-04-06,Follow-up Visit,46,3,No,Yes,100,Medicare,Depression,Skype
+97,76,Female,Hispanic,Medium,2023-04-07,Chronic Disease Management,41,2,No,No,180,Uninsured,Depression,Custom
+98,73,Female,Hispanic,High,2023-04-08,General Consultation,40,5,No,No,150,Medicare,Asthma,Zoom
+99,42,Other,Hispanic,Low,2023-04-09,General Consultation,19,2,Yes,No,150,Private,Depression,Zoom
+100,77,Female,Asian,Low,2023-04-10,General Consultation,54,3,No,Yes,150,Medicaid,Asthma,Zoom
