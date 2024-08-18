@@ -1,9 +1,9 @@
-# 📊 Tele-Health Data Analytics Project 
+# 🏥 Tele-Health Data Analytics Project 
 
 
 ## 🚀 Overview and Purpose
 
-The **Tele-Health Data Analytics** project dives deep into the analysis of telehealth services using state-of-the-art tools like Python 🐍, PostgreSQL 🐘, Power BI 📊, and ERD Builders 🛠️. This project is designed to extract actionable insights from telehealth service data, helping healthcare providers optimize service delivery, enhance patient satisfaction, and make informed, data-driven decisions. Through this analysis, we emphasize the critical role of data in transforming healthcare delivery and improving patient outcomes. 🏥
+The **Tele-Health Data Analytics** project dives deep into the analysis of telehealth services using state-of-the-art tools like Python 🐍, PostgreSQL 🐘, Power BI 📊, and ERD Builders 🛠️. This project is designed to extract actionable insights from telehealth service data, helping healthcare providers optimize service delivery, enhance patient satisfaction, and make informed, data-driven decisions. Through this analysis, we emphasize the critical role of data in transforming healthcare delivery and improving patient outcomes. 
 
 ## 🔍 Key Findings
 
