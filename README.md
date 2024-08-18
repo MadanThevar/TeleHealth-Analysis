@@ -32,14 +32,14 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
    GROUP BY Gender;
 
 2. **🔢 What is the average satisfaction score for each service type?**
-   - **Main Function Used**: 'AVG()' and 'ROUND()'
+   - **Main Function Used**: `AVG()` and `ROUND()`
    ```sql
    SELECT ServiceType, ROUND(AVG(SatisfactionScore), 2) AS AverageSatisfaction
    FROM TelehealthServicesUsage
    GROUP BY ServiceType;
 
 3. **💸 What is the total healthcare cost for each type of insurance?**
-   - **Main Function Used**: 'SUM()' and 'TO_CHAR()'
+   - **Main Function Used**: `SUM()` and `TO_CHAR()`
    ```sql
    SELECT InsuranceType, TO_CHAR(SUM(HealthcareCost), 'FM$999,999,999.00') AS TotalCost
    FROM TelehealthServicesUsage
