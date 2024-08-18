@@ -275,9 +275,7 @@ This diagram is crucial for the project's data management strategy, making it ea
 
 ### 📊 Power-Bi Dashboard
 
-You can view the interactive Power BI dashboard for this project by clicking the link below:
 
-[Telehealth Power BI Dashboard](https://iowastate-my.sharepoint.com/:u:/r/personal/madan262_iastate_edu/Documents/Telehealth%20Power%20BI%20dashboard.pbix?csf=1&web=1&e=Ta1x0B)
 
 
 
