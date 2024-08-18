@@ -31,11 +31,19 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
    FROM TelehealthServicesUsage
    GROUP BY Gender;
 
+**Output:**
+
+<img width="340" alt="Screenshot 2024-08-17 at 22 19 34" src="https://github.com/user-attachments/assets/70acaf20-32b3-4083-a1df-95d484173d1a">
+
 2. **🔢 What is the average satisfaction score for each service type?**
    ```sql
    SELECT ServiceType, ROUND(AVG(SatisfactionScore), 2) AS AverageSatisfaction
    FROM TelehealthServicesUsage
    GROUP BY ServiceType;
+
+**Output:**
+
+<img width="437" alt="Screenshot 2024-08-17 at 22 22 27" src="https://github.com/user-attachments/assets/16668312-fcd1-435e-b7a9-9ff955532a3c">
 
 3. **💸 What is the total healthcare cost for each type of insurance?**
    ```sql
