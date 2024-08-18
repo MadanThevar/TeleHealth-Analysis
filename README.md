@@ -275,8 +275,48 @@ This diagram is crucial for the project's data management strategy, making it ea
 
 ### 📊 Power-Bi Dashboard
 
-<img width="1221" alt="Screenshot 2024-08-17 at 23 53 37" src="https://github.com/user-attachments/assets/c1e3dca8-595f-49c4-a8cf-5615216ebc88">
+<img width="1208" alt="Screenshot 2024-08-17 at 23 59 08" src="https://github.com/user-attachments/assets/84e8a391-d8be-4225-8ee3-28b0f4da9247">
 
+# 📊 Power BI DAX Functions
+
+In this project, several DAX functions were utilized to create dynamic reports and dashboards in Power BI. Below is a summary of the key DAX functions used:
+
+1. **🧮 Total Visits**
+This DAX function calculates the total number of telehealth visits.
+
+   ```DAX
+   Total Visits = COUNTROWS('telehealth_services_usage_extended_cleaned')
+
+2. **💰 Total Healthcare Costs**
+This DAX function calculates the total healthcare costs across all visits.
+
+   ```DAX
+   Total Healthcare Cost = SUM('telehealth_services_usage_extended_cleaned'[Healthcare_Cost])
+
+3. **⭐ Average Satisfaction Score**
+This DAX function calculates the average satisfaction score for all telehealth visits.
+
+   ```DAX
+   Average Satisfaction Score = AVERAGE('telehealth_services_usage_extended_cleaned'[Satisfaction_Score])
+
+4. **👥 Unique Patients**
+This DAX function counts the number of unique patients in the dataset.
+
+   ```DAX
+   Unique Patients = DISTINCTCOUNT('telehealth_services_usage_extended_cleaned'[Patient_ID])
+
+5. **👍 High Satisfaction Flag**
+This DAX function creates a flag to indicate whether a visit had a high satisfaction score (greater than or equal to 4).
+
+   ```DAX
+   High Satisfaction Flag = IF('telehealth_services_usage_extended_cleaned'[Satisfaction_Score] >= 4, "Yes", "No")
+
+
+
+
+
+
+  
 
 
 
