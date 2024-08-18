@@ -101,6 +101,37 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 <img width="626" alt="Screenshot 2024-08-17 at 22 36 15" src="https://github.com/user-attachments/assets/2d918360-1991-4fde-9330-4e648a69daa0">
 
 
+4. **📊 What is the average satisfaction score and total number of visits for each combination of primary diagnosis and service type?**
+   ```sql
+   SELECT PrimaryDiagnosis, ServiceType,
+       ROUND(AVG(SatisfactionScore), 2) AS AverageSatisfactionScore,
+       COUNT(*) AS TotalNumberOfVisits
+   FROM TelehealthServicesUsage
+   GROUP BY PrimaryDiagnosis, ServiceType
+   ORDER BY PrimaryDiagnosis, ServiceType;
+
+**Output:**
+
+<img width="631" alt="Screenshot 2024-08-17 at 22 55 36" src="https://github.com/user-attachments/assets/a10f76dc-2bdc-49a0-b43c-baa027895890">
+
+5. **🔍 For each primary diagnosis, determine the average healthcare cost and satisfaction score for visits that required follow-up compared to those that did not?**
+   ```sql
+   SELECT PrimaryDiagnosis,
+       TO_CHAR(AVG(CASE WHEN FollowUpRequired = 'Yes' THEN CAST(HealthcareCost AS numeric) ELSE NULL END), 'FM$999,999,999.00') AS AvgCostWithFollowUp,
+       TO_CHAR(AVG(CASE WHEN FollowUpRequired = 'No' THEN CAST(HealthcareCost AS numeric) ELSE NULL END), 'FM$999,999,999.00') AS AvgCostWithoutFollowUp,
+       ROUND(AVG(CASE WHEN FollowUpRequired = 'Yes' THEN SatisfactionScore ELSE NULL END), 2) AS AvgSatisfactionWithFollowUp,
+       ROUND(AVG(CASE WHEN FollowUpRequired = 'No' THEN SatisfactionScore ELSE NULL END), 2) AS AvgSatisfactionWithoutFollowUp
+   FROM TelehealthServicesUsage
+   GROUP BY PrimaryDiagnosis
+   ORDER BY PrimaryDiagnosis;
+
+**Output:**
+
+<img width="671" alt="Screenshot 2024-08-17 at 23 02 36" src="https://github.com/user-attachments/assets/9ca4d6db-d1cb-4dec-98b3-eeda5d6afe7b">
+
+
+
+
 
 
 
