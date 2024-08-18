@@ -35,6 +35,7 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 <img width="437" alt="Screenshot 2024-08-17 at 22 19 34" src="https://github.com/user-attachments/assets/70acaf20-32b3-4083-a1df-95d484173d1a">
 
+
 2. **🔢 What is the average satisfaction score for each service type?**
    ```sql
    SELECT ServiceType, ROUND(AVG(SatisfactionScore), 2) AS AverageSatisfaction
@@ -45,6 +46,7 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 <img width="437" alt="Screenshot 2024-08-17 at 22 22 27" src="https://github.com/user-attachments/assets/16668312-fcd1-435e-b7a9-9ff955532a3c">
 
+
 3. **💸 What is the total healthcare cost for each type of insurance?**
    ```sql
    SELECT InsuranceType, TO_CHAR(SUM(HealthcareCost), 'FM$999,999,999.00') AS TotalCost
@@ -54,6 +56,7 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 **Output:**
 
 <img width="437" alt="Screenshot 2024-08-17 at 22 25 20" src="https://github.com/user-attachments/assets/e4dd0056-904e-47ea-8b8a-c0dee6d2c97f">
+
 
  ### Intermediate Level
 
@@ -66,6 +69,41 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
     ORDER BY Gender, SocioeconomicStatus;
    
 **Output:**
+
+<img width="624" alt="Screenshot 2024-08-17 at 22 29 54" src="https://github.com/user-attachments/assets/c5dbfff0-f161-4d22-af28-7e99930e05c3">
+
+
+
+2. **🩺 How many patients had technical issues during their telehealth visits, grouped by primary diagnosis and insurance type?**
+   ```sql
+   SELECT PrimaryDiagnosis, InsuranceType, COUNT(*) AS NumPatientsWithTechnicalIssues
+   FROM TelehealthServicesUsage
+   WHERE TechnicalIssues = 'Yes'
+   GROUP BY PrimaryDiagnosis, InsuranceType
+   ORDER BY PrimaryDiagnosis, InsuranceType;
+
+**Output:**
+
+<img width="624" alt="Screenshot 2024-08-17 at 22 31 57" src="https://github.com/user-attachments/assets/891676f2-61b5-4762-8dda-ba358d984d3e">
+
+
+
+3. **💰 What is the total healthcare cost and the number of follow-up visits for each ethnicity, specifically for patients with 'Medicaid' insurance?**
+    ```sql
+    SELECT Ethnicity, TO_CHAR(SUM(HealthcareCost), 'FM$999,999,999.00') AS TotalHealthcareCost, COUNT(*) AS FollowUpVisits
+    FROM TelehealthServicesUsage
+    WHERE InsuranceType = 'Medicaid' AND FollowUpRequired = 'Yes'
+    GROUP BY Ethnicity
+    ORDER BY TotalHealthcareCost DESC;
+
+**Output:**
+
+<img width="626" alt="Screenshot 2024-08-17 at 22 36 15" src="https://github.com/user-attachments/assets/2d918360-1991-4fde-9330-4e648a69daa0">
+
+
+
+
+
 
 
 
