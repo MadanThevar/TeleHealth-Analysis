@@ -33,7 +33,7 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 **Output:**
 
-<img width="340" alt="Screenshot 2024-08-17 at 22 19 34" src="https://github.com/user-attachments/assets/70acaf20-32b3-4083-a1df-95d484173d1a">
+<img width="437" alt="Screenshot 2024-08-17 at 22 19 34" src="https://github.com/user-attachments/assets/70acaf20-32b3-4083-a1df-95d484173d1a">
 
 2. **🔢 What is the average satisfaction score for each service type?**
    ```sql
@@ -53,7 +53,7 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 
 **Output:**
 
-<img width="300" alt="Screenshot 2024-08-17 at 22 25 20" src="https://github.com/user-attachments/assets/e4dd0056-904e-47ea-8b8a-c0dee6d2c97f">
+<img width="437" alt="Screenshot 2024-08-17 at 22 25 20" src="https://github.com/user-attachments/assets/e4dd0056-904e-47ea-8b8a-c0dee6d2c97f">
 
  ### Intermediate Level
 
@@ -65,6 +65,8 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
     GROUP BY Gender, SocioeconomicStatus
     ORDER BY Gender, SocioeconomicStatus;
    
+**Output:**
+
 
 
 
