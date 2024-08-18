@@ -215,10 +215,62 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 <img width="625" alt="Screenshot 2024-08-17 at 23 20 59" src="https://github.com/user-attachments/assets/03c0d0a0-c03b-434f-933a-447c1eb369b8">
 
 
+## 🗄️ ERD Diagram for Tele-Health Data Analytics
+
+### 📝 Overview
+
+The **Entity-Relationship Diagram (ERD)** for the Tele-Health Data Analytics project is a visual representation of the key entities involved in telehealth services and their relationships. This ERD was created using **dbdiagram.io** 🛠️ and serves as the foundation for understanding the structure of the telehealth data.
+
+### 📊 Key Entities
+
+1. **🧑‍⚕️ Patients**: 
+   - Contains patient information such as ID, age, gender, ethnicity, and socioeconomic status.
+
+2. **🏥 Visits**: 
+   - Records each telehealth visit, including details like patient ID, visit date, service type, visit duration, satisfaction score, technical issues, follow-up needs, healthcare cost, insurance details, and diagnosis.
+
+3. **🩺 Diagnoses**: 
+   - Logs the primary diagnosis associated with each visit.
+
+4. **💻 Telehealth Platforms**: 
+   - Tracks the platforms (e.g., Teladoc, Amwell) used to deliver telehealth services.
+
+5. **🛡️ Insurance**: 
+   - Captures information about the insurance coverage for telehealth services.
+
+6. **⚙️ Technical Issues**: 
+   - Logs any technical difficulties encountered during the telehealth visit, including descriptions of the issues.
+
+### 🔗 Key Relationships
+
+- **👥 Patients ↔ Visits**: 
+  - Each patient can have multiple visits, with each visit linked to a specific patient.
+
+- **🔄 Visits ↔ Diagnoses**: 
+  - Every visit is associated with a primary diagnosis.
+
+- **💻 Visits ↔ Telehealth Platforms**: 
+  - Each visit takes place on a particular telehealth platform.
+
+- **🛡️ Visits ↔ Insurance**: 
+  - Each visit is covered by a specific type of insurance.
+
+- **⚙️ Visits ↔ Technical Issues**: 
+  - Any technical issues during the visit are recorded and linked to the visit.
+
+### 🎯 Purpose of the ERD
+
+The ERD is designed to:
+- **🔍 Visualize Relationships**: Clearly illustrate the connections between patients, visits, diagnoses, platforms, insurance, and technical issues.
+- **📈 Facilitate Data Analysis**: Enable efficient querying and analysis of telehealth data, such as service utilization patterns, patient satisfaction, and platform performance.
+- **🚀 Optimize Data Management**: Assist healthcare providers in managing telehealth data, allowing for improved service delivery and data-driven decision-making.
+
+This diagram is crucial for the project's data management strategy, making it easier for healthcare providers to analyze trends, improve patient outcomes, and optimize telehealth services. The ERD was constructed using **dbdiagram.io** 🛠️, a powerful tool for creating and visualizing database structures.
+
+### 📝 ERD Diagram 
 
 
-
-
+<img width="625" alt="Screenshot 2024-08-17 at 23 35 25" src="https://github.com/user-attachments/assets/6e0fa70c-8a48-41d7-b26b-715f21cfb89f">
 
 
 
