@@ -130,6 +130,93 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
 <img width="671" alt="Screenshot 2024-08-17 at 23 02 36" src="https://github.com/user-attachments/assets/9ca4d6db-d1cb-4dec-98b3-eeda5d6afe7b">
 
 
+ ### Advanced Level
+
+1. **🏥 Determine the top 3 primary diagnoses based on total healthcare costs, and for each, provide the average satisfaction score and the number of visits?**
+   ```sql
+   WITH DiagnosisStats AS (
+    SELECT PrimaryDiagnosis,
+           SUM(CAST(HealthcareCost AS numeric)) AS TotalHealthcareCost,
+           AVG(SatisfactionScore) AS AvgSatisfactionScore,
+           COUNT(*) AS VisitCount
+    FROM TelehealthServicesUsage
+    GROUP BY PrimaryDiagnosis
+   )
+   SELECT PrimaryDiagnosis,
+       TO_CHAR(TotalHealthcareCost, 'FM$999,999,999.00') AS TotalHealthcareCost,
+       ROUND(AvgSatisfactionScore, 2) AS AvgSatisfactionScore,
+       VisitCount
+   FROM DiagnosisStats
+   ORDER BY TotalHealthcareCost DESC
+   LIMIT 3;
+
+**Output:**
+
+<img width="623" alt="Screenshot 2024-08-17 at 23 08 43" src="https://github.com/user-attachments/assets/0dbc1016-cb56-4eb2-9e3c-86f04ac6e480">
+
+2. **💻 Calculate the average healthcare cost and average satisfaction score for each telehealth platform, and identify the telehealth platform with the highest average satisfaction score?**
+   ```sql
+   WITH PlatformStats AS (
+    SELECT TelehealthPlatform,
+           AVG(CAST(HealthcareCost AS numeric)) AS AvgHealthcareCost,
+           AVG(SatisfactionScore) AS AvgSatisfactionScore
+    FROM TelehealthServicesUsage
+    GROUP BY TelehealthPlatform
+    )
+    SELECT TelehealthPlatform,
+       TO_CHAR(AvgHealthcareCost, 'FM$999,999,999.00') AS AvgHealthcareCost,
+       ROUND(AvgSatisfactionScore, 2) AS AvgSatisfactionScore
+   FROM PlatformStats
+   ORDER BY AvgSatisfactionScore DESC
+   LIMIT 1;
+
+**Output:**
+
+<img width="622" alt="Screenshot 2024-08-17 at 23 17 35" src="https://github.com/user-attachments/assets/9b47021b-33b1-4998-9a98-1192a25bc02a">
+
+
+3. **🔍 Determine the top 3 primary diagnoses with the highest average healthcare costs for patients aged 60 and above, and calculate the average satisfaction score and the percentage of visits that required follow-up for each diagnosis?**
+   ```sql
+   WITH AgeFilteredData AS (
+    SELECT PrimaryDiagnosis,
+           SatisfactionScore,
+           CAST(HealthcareCost AS numeric) AS HealthcareCost,
+           FollowUpRequired,
+           Age,
+           PatientID
+    FROM TelehealthServicesUsage
+    WHERE Age >= 60
+    ),
+    DiagnosisStats AS (
+    SELECT PrimaryDiagnosis,
+           AVG(HealthcareCost) AS AvgHealthcareCost,
+           AVG(SatisfactionScore) AS AvgSatisfactionScore,
+           SUM(CASE WHEN FollowUpRequired = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS FollowUpVisitPercentage
+    FROM AgeFilteredData
+    GROUP BY PrimaryDiagnosis
+    ),
+    RankedDiagnoses AS (
+    SELECT PrimaryDiagnosis,
+           AvgHealthcareCost,
+           AvgSatisfactionScore,
+           FollowUpVisitPercentage,
+           RANK() OVER (ORDER BY AvgHealthcareCost DESC) AS Rank
+    FROM DiagnosisStats
+    )
+    SELECT PrimaryDiagnosis,
+       TO_CHAR(AvgHealthcareCost, 'FM$999,999,999.00') AS AvgHealthcareCost,
+       ROUND(AvgSatisfactionScore, 2) AS AvgSatisfactionScore,
+       ROUND(FollowUpVisitPercentage, 2) AS FollowUpVisitPercentage
+     FROM RankedDiagnoses
+     WHERE Rank <= 3
+     ORDER BY AvgHealthcareCost DESC;
+
+**Output:**
+
+<img width="625" alt="Screenshot 2024-08-17 at 23 20 59" src="https://github.com/user-attachments/assets/03c0d0a0-c03b-434f-933a-447c1eb369b8">
+
+
+
 
 
 
