@@ -51,6 +51,10 @@ The **Tele-Health Data Analytics** project dives deep into the analysis of teleh
    FROM TelehealthServicesUsage
    GROUP BY InsuranceType;
 
+**Output:**
+
+<img width="300" alt="Screenshot 2024-08-17 at 22 25 20" src="https://github.com/user-attachments/assets/e4dd0056-904e-47ea-8b8a-c0dee6d2c97f">
+
  ### Intermediate Level
 
  1. **⏳ What is the average duration of visits for each gender and socioeconomic status (for satisfaction scores > 3)?**
